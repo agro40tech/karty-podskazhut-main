@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+
+  --main-font: "Raleway", "Helvetica Neue", Helvetica, Arial;
+  --accent-font: "STIX Two Text", "Helvetica Neue", Helvetica, Arial;
+}
+
+.page {
+  border-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+
+  min-inline-size: 360px;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+.heading {
+  font-family: var(--accent-font);
+  text-align: center;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.content-section {
+  padding: 0 5vi 0 5vi;
+}
