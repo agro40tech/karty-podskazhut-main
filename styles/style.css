@@ -13,10 +13,19 @@
   --accent-font: "STIX Two Text", "Helvetica Neue", Helvetica, Arial;
 
   --list-style-marker-light: url(../images/marker-light.svg);
+  --list-style-marker-dark: url(../images/marker-dark.svg);
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
+
+  --background-darktheme-accent-url: url("../images/pattern.svg");
 }
 
 .page {
-  border-color: var(--bg-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--main-font);
 
@@ -106,8 +115,18 @@ figure {
   block-size: 0.5ch;
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
-
   background-color: var(--accent-color);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+  background-image: var(--background-darktheme-accent-url);
 }
 
 .content__title {
@@ -126,6 +145,18 @@ figure {
   margin-right: 5px;
   font-size: 30px;
   font-weight: 700;
+}
+
+.theme_dark .content__text-block_type_first-lettered:first-letter {
+  border: 1px solid var(--text-color);
+  padding: 4px;
+  margin-right: 5px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.content__paragraph {
+  line-height: 1.5;
 }
 
 .content__figure {
@@ -153,6 +184,7 @@ figure {
   font-style: italic;
   font-weight: 400;
   line-height: 2;
+  margin: 0 auto;
 }
 
 .content__link {
@@ -192,8 +224,18 @@ figure {
   block-size: 0.5ch;
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
-
   background-color: var(--accent-color);
+}
+
+.theme_dark .colored-text::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+  background-image: var(--background-darktheme-accent-url);
 }
 
 .content__card-subtitle {
@@ -210,6 +252,15 @@ figure {
 
 .content__item::before {
   content: var(--list-style-marker-light);
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.theme_dark .content__item::before {
+  content: var(--list-style-marker-dark);
   display: inline-block;
   width: 15px;
   height: 15px;
